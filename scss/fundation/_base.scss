@@ -1,0 +1,72 @@
+$font-color__default: #666;
+$color__dark: #0f3057;
+$color__main: #00587a;
+$color__sub: #008891;
+$color__light: #e7e7de;
+$color__impact: #fbd46d;
+$color__trans: #e7e7dec1;
+$color__white: #fff;
+
+
+$font-size__s: 12px;
+$font-size__m: 14px;
+$font-size__default: 16px;
+$font-size__l: 20px;
+$font-size__xl: 24px;
+$font-size__2l: 28px;
+$font-size__3l: 32px;
+$font-size__4l: 36px;
+
+$space__s: 5px;
+$space__m: 10px;
+$space__l: 15px;
+$space__xl: 20px;
+$space__2l: 25px;
+$space__3l: 30px;
+$space__4l: 35px;
+
+$font-family__corp:'Rock Salt', cursive;
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 769px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: sm){
+  @media #{map-get($breakpoints, $breakpoint)}{      // 定義した関数で引数がデフォルトの時、この行は @media screen and (max-width: 414px){..} と同じで {..} の中の @content に実際に書くプロパティと値が入る
+    @content;
+  }
+}
+
+
+
+html, body{
+  width: 100%;
+  color: $font-color__default;
+  font-size: $font-size__default;
+  line-height: 1.6;
+  font-family: 'Rock Salt', cursive;
+  text-size-adjust: 100%;
+  letter-spacing: 0.1em;
+  
+}
+a{
+  color: $color__white;
+  text-decoration: none;
+  transition: .5s;
+}
+a:hover {
+  color: $color__impact;
+  cursor: pointer;
+  transition: .5s;
+}
+img{
+  width: 100%;    // 親要素いっぱい
+  vertical-align: bottom;
+}
+// span{
+//   font-weight: bold;
+//   font-size: $font-size__l;
+// }

@@ -1,0 +1,445 @@
+.c-menu{
+
+  width: 100%;
+  height: 10vh;
+  //background: rgba(255, 255, 255, 0.509);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 7%;
+  padding-right: 7%;
+  box-sizing: border-box;
+  position: fixed;    // 浮いてその位置に固定されている
+  z-index: 2;
+
+  .c-menu__logo-header{
+    font-size: $font-size__3l;
+  }
+  .c-menu__nav{
+
+    ul{
+      display: flex;
+      align-items: center;
+
+      & li{
+        padding-left: $space__4l;
+        font-size: $font-size__l;
+      }
+    }
+  }
+
+  &.float-active{
+    background: rgba(175, 175, 175, 0.556);
+    transition: all .5s
+  }
+}
+
+.c-menu-trigger{
+  display: none;
+  width: 40px;
+  height: 32px;
+  // box-sizing: border-box;
+  position: relative;
+  z-index: 3;
+  @include mq(){
+    display: initial;
+  }
+  
+  span{
+    display: block; // 幅100% 高さ4pxの線を積み重ねている
+    width: 100%;
+    height: 4px;  
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;   // 下記でそれぞれの棒線の位置を指定(c-menu-trigger内）
+    transition: all .5s;
+
+    &:nth-of-type(1){
+      top: 0;
+    }
+    &:nth-of-type(2){
+      top: 14px;
+    }
+    &:nth-of-type(3){
+      bottom: 0;
+    }
+  }
+  &.active span:nth-of-type(1){
+    transform: translateY(12px) rotate(-45deg);
+  }
+  &.active span:nth-of-type(2) {
+    opacity: 0; 
+  }
+  &.active span:nth-of-type(3) {
+    transform: translateY(-15px) rotate(45deg); 
+  }
+}
+
+@include mq(){
+  .c-menu{
+    display: flex;
+    align-items: center;
+
+    & .c-menu__nav{
+      // display: block;
+      // position: absolute;
+      // top: 0;
+      // right: -100%;
+      // width: 100vw;
+      // height: 100vh;
+      //padding-top: 10vh;
+      
+      display: block;   
+      position: absolute;
+      top: 0;
+      right: -100%;
+      background: rgba(187, 187, 187, 0.85);
+      width: 100vw;
+      height: 100vh;
+      padding-top: 10vh;
+      transition: .5s;
+      z-index: 2;
+      &.active{
+        transition: .5s;
+        transform: translateX(-100%);
+        z-index: 2; 
+      }
+      ul{
+        display: block;
+      
+        li{
+          text-align: center;
+          padding-left: initial;
+
+          .menu-link{
+            display: block;
+            padding: $space__4l;
+          }
+        }
+      } 
+    }
+  }
+}
+
+.c-main-visual__hero{
+  width: 100%;
+  height: 100vh;
+  background-image: url('../images/beach.jpg');   // style.css から見たパスになる
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .title{
+    // text-align: center;
+    // height: 50%;
+    //line-height: 100vh;       // 親の要素と同じ高さの行間指定で上下中央寄せ
+    font-size: $font-size__3l;
+    color: rgb(235, 235, 235);   
+
+    br{
+      display: none;
+
+      @include mq(){
+        display: initial;
+      }
+    }
+  }
+}
+
+.c-ornament{
+  text-align: center;
+  padding-top: $space__3l;
+  padding-bottom: $space__l;
+  
+  &-title{
+    font-size: $font-size__2l;
+    display: inline-block;
+    background: #fff; // 下に作った横線が見えないようにするため
+    padding: 0 $space__xl;  // 左右の余白
+    position: relative;
+    z-index: 1;
+
+    @include mq(){
+      font-size: $font-size__l;
+    }
+  }
+
+  &:before{
+    border-top: 1px solid #2e1f1a;
+    content: "";
+    display: block;
+    position: relative;
+    z-index: 0;
+  }
+  &:before{
+    top: $space__2l;
+  }
+//   &:after{
+//     top: -$space__xl;
+//   }
+}
+
+.c-panel{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+
+  &__container{
+    width: calc(33.3% - 5px);
+    padding-bottom: $space__m;
+    //text-align: center;   // foot のコメントを中央寄せ
+
+    .c-panel__head{
+      width: 100%;
+      height: 250px;
+      
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+    .c-panel__foot{
+      width: 100%;
+      font-size: 12px;
+      padding-top: $space__s;
+    }
+    @include mq(){
+      width: 100%;
+    }
+  }
+
+  @include mq(){
+    flex-direction: column;
+  }
+}
+
+.c-accordion{
+  width: 95%;
+  margin: 0 auto;
+
+  &-item{
+    border-bottom: 1px solid $color__light;
+    margin-bottom: $space__3l;
+    &__question{
+      font-size: $font-size__l;
+      @include mq(){
+        font-size: $font-size__default;
+      }
+    }
+    &__answer{
+      display: none;
+      padding: $space__s 0;
+      //transition: all 2s;
+
+      span{
+        font-weight: bold;
+        font-size: $font-size__l;
+        @include mq(){
+          font-size: $font-size__default;
+        }
+      }
+   
+      &.active{
+        display: block;
+        //transition: display 1s;
+      }
+    } 
+  }
+  // }
+}
+
+.c-form{
+  width: 100%;
+  padding-top: $space__3l;
+
+  & form{
+    width: 55%;
+    margin: 0 auto;
+
+    @include mq(){
+      width: 100%;
+    }
+
+    & input{
+      display: block;
+      width: 100%;
+      height: 50px;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: $space__l;
+      border: 2px solid $color__light;
+      border-radius: 5px;
+      //font-size: $font-size__l;
+      font-family: $font-family__corp;
+
+      &:focus{
+        outline: none;
+        border: 2px solid $color__impact;
+      }
+    }
+    & textarea{
+      display: block;
+      width: 100%;
+      height: 100px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      margin-bottom: $space__l;
+      border: 2px solid $color__light;
+      border-radius: 5px;
+      font-family: $font-family__corp;
+
+      &:focus{
+        outline: none;
+        border: 2px solid $color__impact;
+      }
+    }
+    & input[type="submit"]{
+      background: $color__light;
+      //font-size: $font-size__default;
+      border: none;
+      color: #fff;
+
+      &:hover{
+        cursor: pointer;
+        background: $color__impact;
+        transition: all .5s
+      }
+    }
+    @include mq(){
+      width: 100%;
+    }
+  }
+}
+
+.c-modal__slider{
+  display: none;
+  background: $color__trans;
+  width: 70%;
+  height: 60%;
+  position: fixed;
+  top: 20%;
+  left: 15%;
+  z-index: 3;
+  overflow: hidden;
+
+  // .slider-container{
+  //  position: relative;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    float: left;
+  }
+  .c-button__modal{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: none;
+    background: red;
+    padding: 10px 30px;
+    border-radius: 5px;
+  }
+  // }
+}
+
+.cover{
+  display: none;
+  background: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  
+}
+
+
+.c-slider{
+  width: 50%;
+  height: 30vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+
+  @include mq(){
+    width: 100%;
+  }
+
+  .slider-container{
+    position: relative;
+    
+    .slider__item{
+      float: left;
+      width: auto;
+      height: auto;
+      
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  
+      }
+    }
+  }
+  .fa-caret-up{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: $color__trans;
+    font-size: $font-size__4l;
+    z-index: 1;
+  }
+  .fa-caret-down{
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    color: $color__trans;
+    font-size: $font-size__4l;
+    z-index: 1;
+  }
+
+}
+
+.c-box__comment{
+  width: 40%;
+  //padding: $space__m;
+  box-sizing: border-box;
+  
+  .c-comment__head{
+    //font-size: $font-size__l;
+    padding-bottom: $space__s;
+  }
+  @include mq(){
+    width: 100%;
+    margin-top: $space__l;
+    font-size: $font-size__m;
+  }
+}
+
+.c-footer{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+

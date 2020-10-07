@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" data-auto-replace-svg="nest"></script>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Trip</title>
+</head>
+<body>
+  <header class="l-header" id="trip">
+    <div class="c-menu js-float-menu">
+      <h1 class="c-menu__logo-header"><a href="#trip">trip</a></h1>
+
+    <!-- hamburger menu for responsive --------------------->
+      <div class="c-menu-trigger js-toggle-sp-menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </div>
+    <!------------------------------------------------------->
+      <nav class="c-menu__nav">
+        <ul>
+          <li><a class="menu-link" href="#photos">places</a></li>
+          <li> <a class="menu-link" href="#quiz">about the place</a></li>
+          <li><a class="menu-link" href="#contact">contact</a></li>
+        </ul>
+      </nav> 
+    </div>
+  </header>
+
+  <main class="l-main">
+    <section class="l-main-visual">
+
+      <div class="c-main-visual__hero js-float-menu-target">
+        <h1 class="title">a place to <br> remember</h1>
+      </div>
+
+    </section>
+    
+    <section class="l-panel" id="photos">
+
+      <div class="c-ornament">
+        <h2 class="c-ornament-title">where is it?</h2>
+      </div>
+
+      <div class="c-panel">
+        <div class="c-panel__container js-show-modal">
+          <div class="c-panel__head">
+            <img class="img1" src="./images/christchurch.jpg" alt="">
+            <!-- <img class="img2" src="./images/beach.jpg" alt="" style="display:none"> -->
+          </div>
+          <div class="c-panel__foot">south island of Newzealand</div>
+        </div>
+        <div class="c-panel__container">
+          <div class="c-panel__head">
+            <img class="img1" src="./images/surf.jpg" alt="">
+          </div>
+          <div class="c-panel__foot">somewhere in Australia</div>
+        </div>
+        <div class="c-panel__container">
+          <div class="c-panel__head">
+            <img class="img1" src="./images/mojiko.jpeg" alt="">
+          </div>
+          <div class="c-panel__foot">it's actually in Japan</div>
+        </div>
+        <div class="c-panel__container">
+          <div class="c-panel__head">
+            <img src="./images/byronbay.jpg" alt="">
+          </div>
+          <div class="c-panel__foot">most easterly point in Australia</div>
+        </div>
+        <div class="c-panel__container">
+          <div class="c-panel__head">
+            <img src="./images/tokyo.jpg" alt="">
+          </div>
+          <div class="c-panel__foot">retro ..</div>
+        </div>
+        <div class="c-panel__container">
+          <div class="c-panel__head">
+            <img src="./images/bankok.jpg" alt="">
+          </div>
+          <div class="c-panel__foot">southーeast aisa</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="l-modal">
+      <div class="c-modal__slider js-show-modal-target">
+        <!-- <div class="slide__container"> -->
+          <img class="slide slide1" src="./images/surf.jpg" alt="">
+          <!-- <img class="slide slide2" src="./images/beach.jpg" alt="">
+          <img class="slide slide2" src="./images/surf2.jpg" alt="">
+          <button class="c-button__modal">close</button> -->
+        <!-- </div> -->
+      </div>
+      
+      <div class="cover js-show-modal-cover"></div>
+    </section>
+
+    <section class="l-accordion" id="quiz">
+      
+      <div class="c-ornament">
+        <h2 class="c-ornament-title">here it is.</h2>
+      </div>
+
+      <ul class="c-accordion">
+
+        <li class="c-accordion-item">  
+          <h3 class="c-accordion-item__question">south island of Newzealand</h3>
+          <div class="c-accordion-item__answer">
+            <p><span>クライストチャーチ</span>
+              というニュージーランドの東海岸の南のほう。海岸線にあるとてもきれいな街。１０年ほど前に大きな地震があり被災しましたが、力強く復興しています。</p>
+          </div>
+        </li>
+        <li class="c-accordion-item">  
+          <h3 class="c-accordion-item__question">somewhere in Australia</h3>
+          <div class="c-accordion-item__answer">
+            <p>ゴールドコーストの南に位置する世界中のサーファーが集まる街、<span>クーランガッタ</span>。素晴らしい波が立ち、サーフィンの世界大会も開かれます。</p>
+          </div>
+        </li>
+        <li class="c-accordion-item">  
+          <h3 class="c-accordion-item__question">t's actually in Japan</h3>
+          <div class="c-accordion-item__answer">
+            <p><span>門司港</span> 。北九州の北端に位置し、大正ロマンのレトロな建物。明治から昭和にかけて国際貿易の拠点として横浜・神戸と並んで発展した。日本に居ながら異国の雰囲気が心地いい。</p>
+          </div>
+        </li>
+        <li class="c-accordion-item">  
+          <h3 class="c-accordion-item__question">most easterly point in Australia</h3>
+          <div class="c-accordion-item__answer">
+            <p><span>バイロンベイ</span>。ニューサウスウェールズ州の北東でオーストラリア大陸の最東端に位置する。サーフィンはもちろん、音楽やアートの文化が根付く小さな街。</p>
+          </div>
+        </li>
+        <li class="c-accordion-item">  
+          <h3 class="c-accordion-item__question">retro..</h3>
+          <div class="c-accordion-item__answer">
+            <p>東京は<span>錦糸町</span></p>
+          </div>
+        </li>
+        <li class="c-accordion-item">  
+          <h3 class="c-accordion-item__question">southーeast aisa</h3>
+          <div class="c-accordion-item__answer">
+            <p><span>バンコク</span>。たくさんの人で未来に向かって生きていく活気に満ち溢れている。</p>
+          </div>
+        </li>
+      </ul>
+       
+      <div class="l-slider">
+
+        <div class="c-slider">
+          <i class="fas fa-caret-up"></i>
+          <i class="fas fa-caret-down"></i>
+          <ul class="slider-container">
+            <li class="slider__item" style="background: rgba(0, 0, 255, 0.247)"><img src="./images/sydney.jpg" alt=""></li>
+            <li class="slider__item " style="background: rgba(255, 0, 0, 0.158)"><img src="./images/byron.jpg" alt=""></li>
+            <li class="slider__item " style="background: rgba(255, 0, 0, 0.158)"><img src="./images/moji.jpg" alt=""></li>
+            <li class="slider__item" style="background: rgba(255, 255, 0, 0.301)"><img src="./images/surf2.jpg" alt=""></li>
+          </ul>
+        </div>
+
+        <div class="c-box__comment">
+          <h3 class="c-comment__head">trips are awesome</h3>
+          <p>
+            you would open your mind to other way of life.. 
+            you may find inspiration in nature, people, food and cultures through a trip.    
+            also you'll discover something new about yourself on your trip ..
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+    
+    <section class="l-form" id="contact">
+
+      <div class="c-ornament">
+        <h2 class="c-ornament-title">contact</h2>
+      </div>
+
+      <div class="c-form">
+        <form action="">
+          <input type="text" name="name" placeholder="name" autocomplete="off">
+          <input type="text" name="email" placeholder="email" autocomplete="off">
+          <textarea name="content" id="" cols="30" rows="10" placeholder="comment"></textarea>
+          <input type="submit" value="send" class="c-btn_send">
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="l-footer c-footer">
+    <p> &copy;copyright mass</p>
+  </footer>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
